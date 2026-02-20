@@ -1,9 +1,11 @@
 ﻿{
-  "siteName": "ShareIdea Docs",
+  "siteName": "pbshare",
   "baseUrl": "/",
-  "footer": "ShareIdea Documentation",
+  "footer": "pbshare",
   "navigation": [
     { "title": "Home", "path": "index.html" },
-    { "title": "PB Tier System", "path": "ai-presentation/pb-tier-system.html" }
+    { "title": "PB Tier System", "path": "ai-presentation/pb-tier-system.html" },
+    { "title": "PB's Pick", "path": "ai-presentation/pbs-pick.html" },
+    { "title": "PB's Idea", "path": "ai-presentation/pbs-idea.html" }
   ]
 }

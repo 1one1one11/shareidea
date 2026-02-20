@@ -1,4 +1,4 @@
-﻿# pbshare
+﻿# PB Insight
 
 PB는 고객의 자산 목적에 맞는 전략을 함께 설계하고 실행을 돕는 파트너입니다.
 
@@ -16,13 +16,30 @@ PB는 고객의 자산 목적에 맞는 전략을 함께 설계하고 실행을 
 
 ### 1-2. PB's Pick
 
-- 문서: [pb's-pick](ai-presentation/pbs-pick.md)
+- 문서: [PB's Pick](ai-presentation/pbs-pick.md)
 - 설명: 제가 보는 섹터/종목/상품 아이디어와 투자 판단 기준을 정리합니다.
 
 ### 1-3. PB's Idea
 
-- 문서: [pb's-idea](ai-presentation/pbs-idea.md)
+- 문서: [PB's Idea](ai-presentation/pbs-idea.md)
 - 설명: 확률분포 기반 운용, 리서치 자동화, 상담 운영 아이디어를 공유합니다.
+
+### 1-4. PB Insight Style
+
+- 문서: [pb-insight-style](ai-presentation/pb-insight-style.md)
+- 설명: 앞으로 문서를 어떻게 개선할지 기준을 공개합니다.
+
+### 1-5. 주간 점검 체크리스트
+
+- 문서: [weekly-report](ai-presentation/pb-weekly-report.md)
+- 설명: 매주 반복 가능한 운영 점검 항목을 제공합니다.
+
+## 나의 작업 스타일(향후 반영 규칙)
+
+- 1차: 판단보다 실행 프레임을 먼저 만든다.
+- 2차: 감정보다 확률과 근거를 우선한다.
+- 3차: 문서는 `표 + 체크리스트 + 다음 액션`을 기본 단위로 구성한다.
+- 4차: 좋은 문장보다 재현 가능한 과정이 더 중요하다.
 
 ## 내 투자관 요약
 

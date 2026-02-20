@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pbs Pick | pbshare</title>
-  <meta name="description" content="pbshare documentation" />
+  <title>Pbs Pick | PB Insight</title>
+  <meta name="description" content="PB Insight documentation" />
   <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="../index.html">pbshare</a>
+      <a class="brand" href="../index.html">PB Insight</a>
       <nav class="nav" aria-label="Primary navigation">
         <a class="nav-link" href="../index.html">Home</a>
         <a class="nav-link" href="../ai-presentation/pb-tier-system.html">PB Tier System</a>
         <a class="nav-link active" href="../ai-presentation/pbs-pick.html">PB&#x27;s Pick</a>
         <a class="nav-link" href="../ai-presentation/pbs-idea.html">PB&#x27;s Idea</a>
+        <a class="nav-link" href="../ai-presentation/pb-insight-style.html">PB Insight Style</a>
+        <a class="nav-link" href="../ai-presentation/pb-weekly-report.html">Weekly Report</a>
       </nav>
       <button id="toc-toggle" class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc">TOC</button>
     </div>
@@ -24,108 +26,133 @@
   <main class="container main-layout">
     <article class="content" id="content">
       <h1>PB's Pick</h1>
-<p>내가 생각하기에 좋은 주식 종목/섹터와 추천 상품을, 내 투자관 기준으로 정리한다.</p>
-<h2>1) 밸류에이션 핵심 식</h2>
-<p>다음 관계를 기본 프레임으로 사용한다.</p>
+<h2>1. 투자 후보 숫자 프레임</h2>
+<pre><code class="language-text">입력: 성장성, 수익성, 현금흐름, 밸류, 리스크
+출력: 후보 점수(0~100)
+</code></pre>
+<p><code>후보 점수 = (성장성*0.25) + (수익성*0.25) + (현금흐름*0.20) + (밸류*0.20) + (리스크*0.10)</code></p>
+<h3>기준 가중치 정의</h3>
 <ul>
-<li><code>PBR = (1 + ROE)^N</code></li>
-<li><code>r = (1 + ROE) / PBR^(1/N) - 1</code></li>
-<li><code>PBR = ((1 + ROE) / (1 + r))^N</code></li>
+<li>성장성: 매출성장률, TAM 확장성, 정합성</li>
+<li>수익성: 영업이익률, ROA/ROE, 비용 효율</li>
+<li>현금흐름: 영업현금흐름, 배당성향, 이자상환능력</li>
+<li>밸류: PBR/PER의 상대적 정상성</li>
+<li>리스크: 레버리지, 고객분산, 규제 민감도</li>
 </ul>
-<p>해석 원칙:</p>
+<h2>2. 밸류 체크(핵심식)</h2>
 <ul>
-<li>같은 ROE라면 더 낮은 PBR이 기대수익률 <code>r</code>을 높인다.</li>
-<li>같은 PBR이라면 ROE의 지속기간 <code>N</code>이 길수록 정당화 가능성이 높다.</li>
-<li>숫자 자체보다 <code>ROE의 질</code>(레버리지/회계 왜곡 제외)을 더 중요하게 본다.</li>
+<li>기대수익률 추정치: <code>r = (1 + ROE) / PBR^(1/N) - 1</code></li>
+<li>해석: 높은 ROE와 낮은 PBR가 일치할수록 구조적으로 유리</li>
+<li>주의: 분모의 <code>N</code>은 최소 3년 가정, 분기/반기 급변동 데이터는 제외</li>
 </ul>
-<h2>2) 탑다운: PESTEL 온도 측정</h2>
-<p>예측보다 현재 체제 변화의 <code>온도</code>를 측정한다.</p>
+<h2>3. 섹터 스코어 샘플</h2>
+<table>
+<thead>
+<tr>
+<th>섹터</th>
+<th>성장성</th>
+<th>수익성</th>
+<th>현금흐름</th>
+<th>밸류</th>
+<th>리스크</th>
+<th>후보 점수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 인프라</td>
+<td>88</td>
+<td>74</td>
+<td>70</td>
+<td>62</td>
+<td>55</td>
+<td>72.5</td>
+</tr>
+<tr>
+<td>전력/그리드</td>
+<td>72</td>
+<td>80</td>
+<td>75</td>
+<td>65</td>
+<td>60</td>
+<td>70.0</td>
+</tr>
+<tr>
+<td>디지털 헬스케어</td>
+<td>82</td>
+<td>68</td>
+<td>66</td>
+<td>63</td>
+<td>52</td>
+<td>67.5</td>
+</tr>
+<tr>
+<td>방어형 유틸리티</td>
+<td>48</td>
+<td>72</td>
+<td>82</td>
+<td>69</td>
+<td>67</td>
+<td>65.1</td>
+</tr>
+</tbody>
+</table>
+<h2>4. 피해야 할 패턴</h2>
 <ul>
-<li>Political: 탈세계화, 블록경제, 정책 리스크</li>
-<li>Economic: 금리/유동성/환율, 원가와 수요 구조</li>
-<li>Social: 인구구조, 소비 성향, 불평등과 수요 양극화</li>
-<li>Technological: AI/자동화/플랫폼 전환 속도</li>
-<li>Environmental: 에너지 전환, 규제 비용, 자원 리스크</li>
-<li>Legal: 데이터/AI/IP/노동 관련 제도 변화</li>
+<li>과열 스토리 + 낮은 현금흐름</li>
+<li>고부채 구조 + 성장성 과대 해석</li>
+<li>매출 성장만 큰데 이익 질적 개선 부재</li>
+<li>유동성(거래대금) 취약군</li>
 </ul>
-<h2>3) 바텀업: 기업 점검 체크리스트</h2>
-<h3>A. 15문항 핵심 점검(요약)</h3>
-<ul>
-<li>향후 매출 성장 잠재력</li>
-<li>신제품/신기술 실행력</li>
-<li>R&amp;D 생산성</li>
-<li>평균 이상 영업조직</li>
-<li>영업이익률 및 개선 여지</li>
-<li>노사/조직 안정성</li>
-<li>경영진의 정직성/위기 대응</li>
-<li>재무/회계 역량</li>
-<li>동종업 대비 차별 사업</li>
-<li>단기보다 장기 주주가치 지향</li>
-<li>증자/희석 리스크</li>
-<li>M&amp;A 및 자본배치 역량</li>
-</ul>
-<h3>B. IR에서 자주 묻는 프레임</h3>
-<ul>
-<li>성장성: 시장 크기, 라이프사이클, 점유율</li>
-<li>수익성: 판가/원가/판관비, 레버리지</li>
-<li>안정성: 금리/환율/부채/운전자본</li>
-<li>기타: 지배구조, 배당, 전략 일관성</li>
-</ul>
-<h2>4) 피해야 할 주식 패턴</h2>
-<ul>
-<li>가장 뜨거운 산업의 가장 뜨거운 주식</li>
-<li>"제2의 OOO" 식 마케팅 종목</li>
-<li>본업 무관한 다각화 남발 기업</li>
-<li>유동성 얇은 소문주</li>
-<li>특정 고객사 의존도가 과도한 기업</li>
-<li>스토리만 화려하고 숫자가 약한 기업</li>
-</ul>
-<h2>5) 내가 선호하는 퀄리티</h2>
-<ul>
-<li>높은 ROE + 낮은 부채비율</li>
-<li>이익의 높은 현금전환비율</li>
-<li>현상유지형 재투자보다 성장/현금흐름 창출형 재투자</li>
-<li>이익 -&gt; 현금 -&gt; 주주환원 연결이 명확한 구조</li>
-</ul>
-<h2>6) PB 추천 구성 예시(샘플)</h2>
+<h2>5. 추천 구성(샘플)</h2>
 <table>
 <thead>
 <tr>
 <th>버킷</th>
-<th>목적</th>
-<th>예시</th>
+<th>수익 목표</th>
+<th>선호 지표</th>
+<th>기본 실행</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Core</td>
-<td>장기 복리</td>
-<td>글로벌 퀄리티/인프라 ETF</td>
+<td>안정성</td>
+<td>낮은 리스크, 높은 현금전환</td>
+<td>분할 편입, 월별 리밸런싱</td>
 </tr>
 <tr>
 <td>Income</td>
-<td>변동성 방어</td>
-<td>중단기 우량채/배당형 상품</td>
+<td>현금흐름</td>
+<td>배당성향, 이자보장 구조</td>
+<td>분기 재조정</td>
 </tr>
 <tr>
 <td>Satellite</td>
 <td>구조적 성장</td>
-<td>AI 인프라/전력/자동화 테마</td>
+<td>성장성+밸류 개선 여지</td>
+<td>반기 단위 비중 조정</td>
 </tr>
 </tbody>
 </table>
+<h2>6. 실행 체크</h2>
+<ul>
+<li>[ ] 후보 점수 75점 이상 자산: 중점 검토</li>
+<li>[ ] 후보 점수 60~74점: 조건부 관찰</li>
+<li>[ ] 후보 점수 60점 미만: 제외</li>
+</ul>
 <blockquote>
 <p>본 문서는 개인 투자관 공유용이며, 특정 종목 매수/매도 권유가 아니다.</p>
 </blockquote>
-<p>관련 문서: <a href="../index.html">홈페이지</a>, <a href="./pbs-idea.html">PB's Idea</a></p>
+<p>관련 문서: <a href="../index.html">홈페이지</a>, <a href="./pbs-idea.html">PB's Idea</a>, <a href="./pb-insight-style.html">PB Insight Style</a></p>
     </article>
     <aside id="toc" class="toc" aria-label="Table of contents"></aside>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>pbshare</span>
-      <span>최종 업데이트: 2026-02-20 23:20:33 대한민국 표준시</span>
+      <span>PB Insight</span>
+      <span>최종 업데이트: 2026-02-20 23:55:53 대한민국 표준시</span>
     </div>
   </footer>
 

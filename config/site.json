@@ -1,11 +1,13 @@
 ﻿{
-  "siteName": "pbshare",
+  "siteName": "PB Insight",
   "baseUrl": "/",
-  "footer": "pbshare",
+  "footer": "PB Insight",
   "navigation": [
     { "title": "Home", "path": "index.html" },
     { "title": "PB Tier System", "path": "ai-presentation/pb-tier-system.html" },
     { "title": "PB's Pick", "path": "ai-presentation/pbs-pick.html" },
-    { "title": "PB's Idea", "path": "ai-presentation/pbs-idea.html" }
+    { "title": "PB's Idea", "path": "ai-presentation/pbs-idea.html" },
+    { "title": "PB Insight Style", "path": "ai-presentation/pb-insight-style.html" },
+    { "title": "Weekly Report", "path": "ai-presentation/pb-weekly-report.html" }
   ]
 }

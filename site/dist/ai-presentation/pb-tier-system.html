@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pb Tier System | pbshare</title>
-  <meta name="description" content="pbshare documentation" />
+  <title>Pb Tier System | PB Insight</title>
+  <meta name="description" content="PB Insight documentation" />
   <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="../index.html">pbshare</a>
+      <a class="brand" href="../index.html">PB Insight</a>
       <nav class="nav" aria-label="Primary navigation">
         <a class="nav-link" href="../index.html">Home</a>
         <a class="nav-link active" href="../ai-presentation/pb-tier-system.html">PB Tier System</a>
         <a class="nav-link" href="../ai-presentation/pbs-pick.html">PB&#x27;s Pick</a>
         <a class="nav-link" href="../ai-presentation/pbs-idea.html">PB&#x27;s Idea</a>
+        <a class="nav-link" href="../ai-presentation/pb-insight-style.html">PB Insight Style</a>
+        <a class="nav-link" href="../ai-presentation/pb-weekly-report.html">Weekly Report</a>
       </nav>
       <button id="toc-toggle" class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc">TOC</button>
     </div>
@@ -24,50 +26,65 @@
   <main class="container main-layout">
     <article class="content" id="content">
       <h1>PB 고객관리 AI 시스템: 티어 기반 서비스 체계</h1>
-<p>티어 기반 서비스 차등화를 통해 상위 고객에 PB 리소스를 집중하고, 반복 업무는 자동화 채널로 처리한다.</p>
-<h2>문서 목적</h2>
+<p>본 문서는 티어 운영을 숫자와 규칙으로 재구성한 실행 템플릿이다.</p>
+<h2>0. 산정 지표(필수)</h2>
 <ul>
-<li>PB 서비스 티어 기준을 단순하고 일관되게 정의</li>
-<li>티어별 서비스 범위/SLA를 명확히 규정</li>
-<li>향후 CRM 대시보드 및 알림 시스템 확장 기준 제공</li>
+<li>자산 점수: AUM 구간에 따라 0~40점</li>
+<li>거래 점수: 최근 90일 상담/거래 빈도로 0~25점</li>
+<li>리스크 점수: 이탈 신호 및 민감도 기반 0~20점 (리스크 낮을수록 높음)</li>
+<li>PB 시간 점수: PB 응답 속도/이슈 처리 품질 기반 0~15점</li>
 </ul>
-<h2>Tier 1 - Platinum</h2>
-<p>자산 50억+ · 수익 상위 5% · Ultra HNW</p>
+<p><code>총점 = AUM + 거래 + 리스크 + PB시간</code>, 최대 100점.</p>
+<h2>1. Tier 기준 (숫자 버전)</h2>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>총점 범위</th>
+<th>자산 예시</th>
+<th>월간 운영 리소스</th>
+<th>핵심 의사결정권한</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Platinum</td>
+<td>80~100</td>
+<td>50억+</td>
+<td>실무팀 + PB 전담</td>
+<td>즉시 조정/우선 대응</td>
+</tr>
+<tr>
+<td>Gold</td>
+<td>60~79</td>
+<td>10~50억</td>
+<td>PB 중심 + 자동화 보조</td>
+<td>매주 검토/우선 큐</td>
+</tr>
+<tr>
+<td>Silver</td>
+<td>35~59</td>
+<td>3~10억</td>
+<td>자동화 우선 + 주기 점검</td>
+<td>주기 리포트 기반</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>0~34</td>
+<td>3억 미만</td>
+<td>디지털 우선 + 분기 점검</td>
+<td>기본 규정 준수</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 고객 운영 규칙(티어별)</h2>
 <ul>
-<li>포트폴리오: 실시간 모니터링 + 고객별 커스텀 대시보드</li>
-<li>캐시플로우: 이자/배당/만기 이벤트 전량 추적 + 사전 알림</li>
-<li>리서치: 당사 + 주요 외부 + 글로벌 소스 통합 요약</li>
-<li>매매 지원: AI 시나리오 사전 생성 후 PB 검토 기반 제안</li>
-<li>응대 SLA: 즉시 연결, 24시간 내 콜백 보장</li>
+<li>Platinum: 고난도 의사결정 케이스에서 PB 직접 리뷰 필수</li>
+<li>Gold: 고빈도 이슈만 PB 직접, 나머지는 템플릿 기반 자동화</li>
+<li>Silver: 반복 질의는 디지털 채널 1차 응답 후 PB Escalation</li>
+<li>Standard: 디지털 self-serve 우선, 월 1회 이상 핵심 이슈 요약</li>
 </ul>
-<h2>Tier 2 - Gold</h2>
-<p>자산 10~50억 · HNW</p>
-<ul>
-<li>포트폴리오: 주간 리뷰 리포트 자동 생성 + PB 검수</li>
-<li>캐시플로우: 주요 이자/배당 알림 제공</li>
-<li>리서치: 당사 + 주요 외부 리서치 요약</li>
-<li>매매 지원: 요청 기반 처리, 능동 제안 월 1~2회</li>
-<li>응대 SLA: 1시간 내 콜백</li>
-</ul>
-<h2>Tier 3 - Silver</h2>
-<p>자산 3~10억 · Mass Affluent</p>
-<ul>
-<li>포트폴리오: 월간 리뷰 자동 생성/발송</li>
-<li>캐시플로우: 만기/배당 기본 알림만 제공</li>
-<li>리서치: 당사 리서치 요약 제공</li>
-<li>매매 지원: AI 챗봇/RPA 우선 대응, PB 처리 지연 허용</li>
-<li>응대 SLA: 2시간 내 콜백</li>
-</ul>
-<h2>Tier 4 - Standard</h2>
-<p>자산 3억 미만 · General</p>
-<ul>
-<li>포트폴리오: 분기 리포트 자동 발송</li>
-<li>캐시플로우: 기본 미제공</li>
-<li>리서치: 뉴스레터 수준 브리핑</li>
-<li>매매 지원: MTS/HTS 유도, 단순 주문 자동화</li>
-<li>응대 SLA: 당일 내 콜백(예약제)</li>
-</ul>
-<h2>서비스 항목별 비교 매트릭스</h2>
+<h2>3. 서비스 항목별 비교 매트릭스</h2>
 <table>
 <thead>
 <tr>
@@ -80,79 +97,109 @@
 </thead>
 <tbody>
 <tr>
-<td>포트폴리오 모니터링</td>
-<td>실시간</td>
-<td>주간</td>
-<td>월간</td>
-<td>분기</td>
+<td>실시간 모니터링</td>
+<td>O</td>
+<td>반자동</td>
+<td>월 1회</td>
+<td>분기 1회</td>
 </tr>
 <tr>
 <td>캐시플로우 추적</td>
 <td>전량 + 최적화</td>
-<td>알림 중심</td>
+<td>핵심 이벤트만</td>
 <td>기본 알림</td>
 <td>미제공</td>
 </tr>
 <tr>
-<td>리서치 커버리지</td>
-<td>외부+당사 통합</td>
-<td>당사+주요 외부</td>
-<td>당사 중심</td>
+<td>리서치 지원</td>
+<td>통합 브리핑</td>
+<td>보조 요약</td>
+<td>핵심 요약</td>
 <td>뉴스레터</td>
 </tr>
 <tr>
-<td>AI 매매 시나리오</td>
-<td>상시 지원</td>
+<td>매매 시나리오</td>
+<td>상시 제안</td>
 <td>월 1~2회</td>
-<td>제한적</td>
-<td>미제공</td>
+<td>요청 기반</td>
+<td>보류</td>
 </tr>
 <tr>
 <td>PB 직접 응대</td>
-<td>즉시</td>
+<td>우선 응답</td>
 <td>1시간 내</td>
 <td>2시간 내</td>
-<td>당일</td>
+<td>당일 내</td>
 </tr>
 <tr>
 <td>단순 주문 처리</td>
 <td>PB 직접</td>
 <td>PB 우선</td>
-<td>AI/RPA 우선</td>
+<td>AI/자동</td>
 <td>디지털 유도</td>
 </tr>
 </tbody>
 </table>
-<h2>단순업무 처리 프로토콜</h2>
+<h2>4. 단순업무 처리 프로토콜</h2>
 <p>핵심 원칙: <code>지연</code>이 아니라 <code>채널 분리</code>로 설계한다.</p>
-<h3>1) 디지털 채널 우선 안내</h3>
-<p>Tier 3~4의 단순 주문(시장가/정정/이체)은 AI ARS/챗봇 1차 응대로 처리하고, 모바일 주문 경로를 우선 안내한다.</p>
-<h3>2) 정보성 요청 자동 응답</h3>
-<p>잔고 조회, 세금 문의, 수익률 확인 같은 반복 조회성 요청은 전 티어 공통으로 자동 응답한다.</p>
-<h3>3) 콜백 큐 SLA 자동 관리</h3>
+<h3>4.1 디지털 채널 우선 안내</h3>
 <ul>
-<li>Tier 1~2: 즉시 또는 1시간 내 응답</li>
-<li>Tier 3: 2시간 내 콜백</li>
-<li>Tier 4: 당일 내 콜백</li>
+<li>시장가/정정/이체 요청: AI ARS/챗봇 1차 응답</li>
+<li>1차 응답 성공률 기준: 85% 목표, 초과시 PB Escalation</li>
 </ul>
-<h3>4) 운영 효과</h3>
+<h3>4.2 자동 응답 표준화</h3>
+<ul>
+<li>잔고 조회/세금 문의/수익률 조회 자동 응답 기준값은 95% 이상으로 유지</li>
+<li>핵심 질문군에 대해서만 PB 라우팅(분기별 재정의)</li>
+</ul>
+<h3>4.3 콜백 우선순위 점수</h3>
+<p><code>콜백 우선순위 = (미해결 위험도*0.6) + (고객등급*0.3) + (처리지연시간*0.1)</code></p>
+<ul>
+<li>Tier 1~2: 즉시 또는 1시간 내</li>
+<li>Tier 3: 2시간 내</li>
+<li>Tier 4: 당일 내</li>
+</ul>
+<h2>5. 운영 효과</h2>
 <div class="card">
-<strong>기대 효과(예시)</strong><br/>
-PB 시간의 70% 이상을 상위 티어 고객에 집중하고, 단순 반복업무의 80% 이상 자동화를 목표로 한다.
+<strong>1차 목표</strong><br/>
+PB 시간의 60% 이상을 고부담 케이스(Tier 1~2)로 재배치하고, 단순업무의 자동 응답 비율을 75%로 끌어올린다.
 </div>
 
-<h2>구현 체크리스트(샘플)</h2>
-<ul>
-<li>[x] 티어 기준 정의</li>
-<li>[x] 서비스 매트릭스 정의</li>
-<li>[x] SLA 룰 초안 작성</li>
-<li>[ ] 알림 이벤트 스키마 확정</li>
-<li>[ ] 대시보드 KPI 연결</li>
-</ul>
+<h2>6. 적용 우선순위(90일)</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>기간</th>
+<th>액션</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0~30일</td>
+<td>티어 점수 계산 배치, 템플릿 라우팅</td>
+</tr>
+<tr>
+<td>2</td>
+<td>31~60일</td>
+<td>PB 응답 SLA 대시보드 도입</td>
+</tr>
+<tr>
+<td>3</td>
+<td>61~90일</td>
+<td>운영 지표 리포트 자동 생성</td>
+</tr>
+</tbody>
+</table>
 <p>관련 문서: <a href="../index.html">메인 가이드</a></p>
-<h2>변경 이력</h2>
+<h2>체크리스트</h2>
 <ul>
-<li>2026-02-20: 참고 사이트 구조 기반 샘플 문서 재작성</li>
+<li>[x] 티어 점수 산정 공식 정의</li>
+<li>[x] 티어별 SLA 규칙 정의</li>
+<li>[x] 자동응답/우선순위 규칙 정의</li>
+<li>[ ] 대시보드/알림 스키마 연동</li>
+<li>[ ] API 기반 이벤트 자동 점검</li>
 </ul>
     </article>
     <aside id="toc" class="toc" aria-label="Table of contents"></aside>
@@ -160,8 +207,8 @@ PB 시간의 70% 이상을 상위 티어 고객에 집중하고, 단순 반복�
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>pbshare</span>
-      <span>최종 업데이트: 2026-02-20 23:20:33 대한민국 표준시</span>
+      <span>PB Insight</span>
+      <span>최종 업데이트: 2026-02-20 23:55:53 대한민국 표준시</span>
     </div>
   </footer>
 

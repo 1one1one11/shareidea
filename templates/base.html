@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{PAGE_TITLE}} | {{SITE_NAME}}</title>
+  <meta name="description" content="{{SITE_NAME}} documentation" />
+  <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ASSET_PREFIX}}index.html">{{SITE_NAME}}</a>
+      <nav class="nav" aria-label="Primary navigation">
+        {{NAVIGATION}}
+      </nav>
+      <button id="toc-toggle" class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc">TOC</button>
+    </div>
+  </header>
+
+  <main class="container main-layout">
+    <article class="content" id="content">
+      {{CONTENT}}
+    </article>
+    <aside id="toc" class="toc" aria-label="Table of contents"></aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>{{FOOTER_TEXT}}</span>
+      <span>최종 업데이트: {{BUILD_TIME}}</span>
+    </div>
+  </footer>
+
+  <script src="{{ASSET_PREFIX}}assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿{
+  "siteName": "ShareIdea Docs",
+  "baseUrl": "/",
+  "footer": "ShareIdea Documentation",
+  "navigation": [
+    { "title": "Home", "path": "index.html" },
+    { "title": "PB Tier System", "path": "ai-presentation/pb-tier-system.html" }
+  ]
+}
